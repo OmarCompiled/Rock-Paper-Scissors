@@ -36,8 +36,9 @@ main{
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    box-shadow: 0 0 5px white, 0 0 10px white;
+    box-shadow: 0 0 5px #E5E7EB, 0 0 10px #E5E7EB;
     font-size: 24px;
+    text-align: center;
 }
 
 #buttons{
@@ -49,4 +50,27 @@ main{
 input{
     height: 70px;
     width: 70px;
+    border-radius: 5px;
+    border: none;
+    font-family: inherit;
+    font-size: 8px;
+    box-shadow: 0 0 5px #E5E7EB, 0 0 10px #E5E7EB;
 }
+
+#rock{
+    background-color: #FF3131;
+}
+
+#paper{
+    background-color: #00AFFF;
+}
+
+#scissors{
+    background-color: #FFD700;
+}
+
+input:hover{
+    opacity: 0.5;
+    box-shadow: none;
+}
+
