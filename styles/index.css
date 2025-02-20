@@ -53,6 +53,7 @@ input{
     border-radius: 5px;
     border: none;
     font-family: inherit;
+    color: #000000;
     font-size: 8px;
     box-shadow: 0 0 5px #E5E7EB, 0 0 10px #E5E7EB;
 }
@@ -78,3 +79,17 @@ input:hover{
     color: white;
 }
 
+@media(max-width : 700px){
+    #display{
+        height: 200px;
+    }
+
+    #buttons{
+        gap: 16px;
+    }
+
+    input{
+        height: 90px;
+        width: 90px;
+    }
+}

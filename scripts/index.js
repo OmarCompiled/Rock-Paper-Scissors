@@ -6,6 +6,8 @@ let roundCount    = 0;
 let humanScore    = 0;
 let computerScore = 0;
 
+display.textContent = "Press any button to start!";
+
 let playRound = (humanChoice, computerChoice) => {
     if(humanChoice === computerChoice) {
         display.textContent = "Draw!";
@@ -20,19 +22,24 @@ let playRound = (humanChoice, computerChoice) => {
         display.textContent = "You won this round!";
     } else {
         computerScore++;
-        display.textContent = "The computer won this round!";
+        display.textContent = "I won this round!";
     }
     roundCount++;
 
     if(roundCount === 5) {
-        let winner = humanScore === computerScore ? "Nobody" : humanScore > computerScore ? "You" : "I";
+        let winner;
+        if(humanScore > computerScore) {
+            winner = "You";
+        } else if(humanScore < computerScore) {
+            winner = "I";
+        } else {
+            winner = "Nobody";
+        }
         display.style.fontSize = "18px";
-        display.innerHTML = `You scored ${humanScore} & I scored ${computerScore},
+        display.innerHTML += `<br>You scored ${humanScore} & I scored ${computerScore},
         <br>${winner} won the game!
         <br> Press any button to play again.`;
-        buttons.forEach(button => button.addEventListener("click", () => {
-            
-        }));
+        buttons.forEach(button => button.disabled = true);             
     }
 }
 
