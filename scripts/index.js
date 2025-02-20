@@ -1,18 +1,10 @@
-const display        = document.querySelector("#display");
-const rockButton     = document.querySelector("#rock");
-const paperButton    = document.querySelector("#paper");
-const scissorsButton = document.querySelector("#scissors");
-
+const display = document.querySelector("#display");
 const buttons = document.querySelectorAll("input");
 
 let getComputerChoice = () => {
     const choices = ["rock", "paper", "scissors"];
     let randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber];
-}
-
-let getHumanChoice = () => {
-    display.textContent = "Rock, Paper, Scissors?";
 }
 
 let humanScore = 0;
@@ -38,14 +30,14 @@ let playRound = (humanChoice, computerChoice) => {
     return;
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+buttons.forEach(button => button.addEventListener("click", () => playRound(button.value, getComputerChoice())));
+
+// const computerSelection = getComputerChoice();
 
 // function playGame(humanSelection, computerSelection) {
 //     let roundCount = 1;
 //     playRound(humanSelection, computerSelection);
 //     while(roundCount < 5) {
-//         humanSelection = getHumanChoice();
 //         computerSelection = getComputerChoice();
 //         playRound(humanSelection, computerSelection);
 //         roundCount++;
